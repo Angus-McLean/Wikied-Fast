@@ -20,9 +20,11 @@ from flask_compress import Compress
 from flask import Flask, request, jsonify
 from helpers import InvalidRequest, fetch_wikipedia_pages_info
 
-import pandas as pd
-DF_SUMMARIES = pd.read_csv('../database/subset_summaries.csv')
-from sklearn.feature_extraction.text import TfidfVectorizer
+# import pandas as pd
+# DF_SUMMARIES = pd.read_csv('../database/subset_summaries.csv')
+# from sklearn.feature_extraction.text import TfidfVectorizer
+
+
 
 # Connect to the SDOW database.
 database = Database(sdow_database='./sdow.sqlite', searches_database='./searches.sqlite')
@@ -90,8 +92,8 @@ def ok_endpoint():
   })
 
 
-@app.route('/similarity', methods=['POST'])
-def page_target_similarities():
+@app.route('/outgoing_links', methods=['POST'])
+def get_outgoing_links():
   print('incoming : ', request.json['target'])
   try:
     (target_page_id, target_page_title,
@@ -109,6 +111,9 @@ def page_target_similarities():
       response['links'].append(int(target_page_id))
 
   return jsonify(response)
+
+# @app.route('/outgoing_links', methods=['POST'])
+# def page_target_similarities():
 
 
 @app.route('/paths', methods=['POST'])
