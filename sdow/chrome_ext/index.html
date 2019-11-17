@@ -1,0 +1,143 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Race our AI on Wikipedia!</title>
+  <meta name="description" content="Race our AI on Wikipedia!">
+  <meta name="author" content="MUTHax">
+
+  <style type="text/css">
+
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      max-height: 100%;
+      font-family: Sans-serif;
+      line-height: 1vw;
+    }
+
+    #header {
+      position: absolute;
+      align: middle;
+      text-align: center;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 10%;
+      font-size: 0.5vw;
+      overflow: hidden;
+      border: solid;
+      box-sizing: border-box;
+      background: #fff;
+    }
+
+    #commands {
+      position: absolute;
+      align: middle;
+      top: 10%;
+      left: 0;
+      width: 20%;
+      height: 20%;
+      overflow: hidden;
+      border: solid;
+      border-top: none;
+      box-sizing: border-box;
+      line-height: 0.25vw;
+      background: #fff;
+    }
+
+    .tree {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 20%;
+      height: 70%;
+      overflow: auto;
+      border: solid;
+      border-top: none;
+      box-sizing: border-box;
+      background: #fff;
+      font-size: 16px;
+      line-height: 2;
+    }
+
+    #user_tree {
+      height: 30%;
+    }
+
+    main {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: 90%;
+      width: 80%;
+      overflow: auto;
+      background: #fff;
+    }
+
+    .wiki_panel {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      overflow: auto;
+    }
+
+    .wiki_panel iframe {
+      display: block;
+      height: 100%;
+      width: 100%;
+      border: none;
+      overflow: auto;
+    }
+
+  </style>
+
+    <script language="javascript" src="StopWatch.js" ></script>
+    <script language="javascript" src="index.js" ></script>
+    <script language="javascript" src="navigate_loop.js" ></script>
+    
+</head>
+
+<body>
+  <header id="header">
+    <div style="margin: auto;">
+      <h1>Welcome to Wikied Fast!</h1>
+      <h2><p>Here, you will compete against an AI to reach a random Wikipedia article by clicking on available article links. Meanwhile, you will be able to track the AI progress on the left side of the screen! Are you ready?</p></h2>
+    </div>
+  </header>
+
+  <commands id="commands">
+    <div style="margin: auto; text-align: center; padding: 1vw">
+      <!-- <input type="text" id="json_src_target"></input> -->
+      <button id="button" type="button" style="font-size: 2vw;">Start!</button>
+      <p id="target" style="font-style: strong;">Target page</p>
+      <p id="elapsed_time" style="text-align: center; font-style: italic; font-size: 4vw;">00:00.00</p>
+    </div>
+</commands>
+
+  <tree id="tree" class="tree">
+    <p>AI's wiki-journey : </p>
+
+  </tree>
+  <tree id="user_tree" class="tree">
+    <p>Users' wiki-journey : </p>
+
+  </tree>
+
+  <main>
+    <div class="wiki_panel">
+      <iframe id="wiki_frame" src="https://en.wikipedia.org/wiki/Anarchism">
+          <script>
+          </script>
+      </iframe>
+    </div>
+  </main>
+
+</body>
+</html>
