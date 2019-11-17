@@ -26,4 +26,5 @@ firebase-debug.log
 
 sdow/env
 *.sqlite
-/data
+*.sql
+/database/*.txt
